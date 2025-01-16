@@ -5,7 +5,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find_by(id: 3)
+    the_id = params[:id]    
+    @recipe = Recipe.find_by(id: the_id)
     render :show
   end
 end
