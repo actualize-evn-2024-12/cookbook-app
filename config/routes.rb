@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   # get "/first_recipe", controller: "recipes", action: "first"
   get "/recipes" => "recipes#index"
+  get "/recipes/:id" => "recipes#show"
 end
