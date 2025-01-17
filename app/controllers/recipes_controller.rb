@@ -36,4 +36,10 @@ class RecipesController < ApplicationController
     @recipe.save
     render :show
   end
+
+  def destroy
+    recipe = Recipe.find_by(id: params[:id])
+    recipe.destroy
+    render json: {messsage: "Recipe has been removed"}
+  end
 end
