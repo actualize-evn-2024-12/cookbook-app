@@ -26,13 +26,14 @@ class RecipesController < ApplicationController
 
   def update
     # what code do i need here?
-    recipe = Recipe.find_by(id: 14)
-    recipe.title = 'cara cara orange'
-    recipe.chef = 'antonia'
-    recipe.directions = 'water every day'
-    recipe.image_url = 'https://i0.wp.com/jerrysjungle.com/wp-content/uploads/2021/06/cara-cara.jpg?fit=1000%2C1000&ssl=1'
-    recipe.prep_time =  1
-    recipe.save
-    render json: {message: "hello"} 
+    @recipe = Recipe.find_by(id: params[:id])
+    @recipe.title = params[:title]
+    @recipe.chef = params[:chef]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.directions = params[:directions]
+    @recipe.image_url = params[:image_url]
+    @recipe.prep_time = params[:prep_time]
+    @recipe.save
+    render :show
   end
 end
