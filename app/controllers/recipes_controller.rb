@@ -23,4 +23,16 @@ class RecipesController < ApplicationController
     @recipe.save
     render :show
   end
+
+  def update
+    # what code do i need here?
+    recipe = Recipe.find_by(id: 14)
+    recipe.title = 'cara cara orange'
+    recipe.chef = 'antonia'
+    recipe.directions = 'water every day'
+    recipe.image_url = 'https://i0.wp.com/jerrysjungle.com/wp-content/uploads/2021/06/cara-cara.jpg?fit=1000%2C1000&ssl=1'
+    recipe.prep_time =  1
+    recipe.save
+    render json: {message: "hello"} 
+  end
 end
