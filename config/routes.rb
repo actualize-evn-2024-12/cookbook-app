@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   # get "/first_recipe", controller: "recipes", action: "first"
   get "/recipes" => "recipes#index"
   get "/recipes/:id" => "recipes#show"
+  post "/recipes" => "recipes#create"
 end
