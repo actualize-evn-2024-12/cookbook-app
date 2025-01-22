@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
 
   def show
     the_id = params[:id]    
-    @recipe = Recipe.find_by(id: the_id)
+    @recipe = Recipe.find_by(id: the_id)    
     render :show
   end
 
@@ -27,12 +27,12 @@ class RecipesController < ApplicationController
   def update
     # what code do i need here?
     @recipe = Recipe.find_by(id: params[:id])
-    @recipe.title = params[:title]
-    @recipe.chef = params[:chef]
-    @recipe.ingredients = params[:ingredients]
-    @recipe.directions = params[:directions]
-    @recipe.image_url = params[:image_url]
-    @recipe.prep_time = params[:prep_time]
+    @recipe.title = params[:title] || @recipe.title
+    @recipe.chef = params[:chef] || @recipe.chef
+    @recipe.ingredients = params[:ingredients] || @recipe.ingredients
+    @recipe.directions = params[:directions] || @recipe.directions
+    @recipe.image_url = params[:image_url] || @recipe.image_url
+    @recipe.prep_time = params[:prep_time] || @recipe.prep_time
     @recipe.save
     render :show
   end
