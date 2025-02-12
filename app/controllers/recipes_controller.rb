@@ -17,7 +17,6 @@ class RecipesController < ApplicationController
       ingredients: params[:ingredients], 
       directions: params[:directions], 
       prep_time: params[:prep_time], 
-      chef: params[:chef],
       image_url: params[:image_url]
     )
     @recipe.save
@@ -27,8 +26,7 @@ class RecipesController < ApplicationController
   def update
     # what code do i need here?
     @recipe = Recipe.find_by(id: params[:id])
-    @recipe.title = params[:title] || @recipe.title
-    @recipe.chef = params[:chef] || @recipe.chef
+    @recipe.title = params[:title] || @recipe.title    
     @recipe.ingredients = params[:ingredients] || @recipe.ingredients
     @recipe.directions = params[:directions] || @recipe.directions
     @recipe.image_url = params[:image_url] || @recipe.image_url
