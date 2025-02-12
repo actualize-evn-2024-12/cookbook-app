@@ -1,5 +1,9 @@
 class RecipesController < ApplicationController
   def index
+    p "will print out current user"
+    p current_user
+    p "just printed out current user"
+    
     @recipes = Recipe.all
     render :index
   end
