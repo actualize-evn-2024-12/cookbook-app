@@ -9,3 +9,4 @@ json.prep_time recipe.prep_time
 # json.friendly_prep_time recipe.friendly_prep_time
 # json.friendly_created_at recipe.friendly_created_at
 json.updated_at recipe.updated_at
+json.user_id recipe.user_id
