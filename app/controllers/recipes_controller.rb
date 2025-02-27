@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def index   
-    @recipes = Recipe.all
+    # @recipes = Recipe.all
+    @recipes = Recipe.where("title LIKE ?", "%#{params[:search]}%")
     render :index
   end
 
